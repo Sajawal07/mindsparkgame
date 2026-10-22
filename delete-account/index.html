@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account & Data Deletion – MindSpark</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background: #0f0c1e;
+      color: #e0d9f7;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #1a1535;
+      border-radius: 16px;
+      padding: 48px 40px;
+      border: 1px solid #2e2660;
+      box-shadow: 0 8px 40px rgba(108,77,255,0.15);
+    }
+    .header-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .nav-link {
+      color: #a78bfa;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-link:hover { text-decoration: underline; }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #6c4dff, #a855f7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #a78bfa, #6c4dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #8b7fc7;
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+    .alert-box {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .alert-icon { font-size: 24px; line-height: 1; }
+    .alert-text { font-size: 14px; color: #fca5a5; line-height: 1.6; }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #a78bfa;
+      margin: 28px 0 12px;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #c4bae8;
+    }
+    ul, ol {
+      padding-left: 22px;
+      margin: 10px 0;
+    }
+    li { margin-bottom: 8px; }
+    .steps-card {
+      background: #231d48;
+      border: 1px solid #3b3270;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0;
+    }
+    .steps-card ol {
+      padding-left: 20px;
+    }
+    .steps-card li {
+      margin-bottom: 10px;
+    }
+    .steps-card strong {
+      color: #ffffff;
+    }
+    .badge {
+      display: inline-block;
+      background: #6c4dff;
+      color: #ffffff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, #2e2660, transparent);
+      margin: 32px 0;
+    }
+    .contact-card {
+      background: linear-gradient(135deg, #231d48, #1e183f);
+      border: 1px solid #483d8b;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+    a.btn-email {
+      display: inline-block;
+      margin-top: 14px;
+      background: linear-gradient(135deg, #6c4dff, #a855f7);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: opacity 0.2s;
+    }
+    a.btn-email:hover { opacity: 0.9; }
+    a { color: #a78bfa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-links">
+      <a href="index.html" class="nav-link">← Back to MindSpark</a>
+      <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
+    </div>
+
+    <div class="logo">
+      <div class="logo-icon">⚡</div>
+      <span class="logo-text">MindSpark</span>
+    </div>
+
+    <h1>Account &amp; Data Deletion Request</h1>
+    <p class="subtitle">
+      Information on how to request the deletion of your account and associated game data for MindSpark: Daily Brain Challenge (Package: <code>com.gujjar.mindspark</code>).
+    </p>
+
+    <div class="alert-box">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-text">
+        <strong>Important Warning:</strong> Requesting account deletion will schedule the permanent deletion of your profile, all game progress, coin balances, arena records, achievements, and statistics. Once processed, this action cannot be undone.
+      </div>
+    </div>
+
+    <h2>1. 30-Day Account Deletion Procedure</h2>
+    <p>
+      MindSpark implements a secure <strong>30-day account deletion procedure</strong> designed to safeguard users:
+    </p>
+    <ul>
+      <li>When an account deletion request is submitted, your account status is immediately changed to <em>pending deletion</em>.</li>
+      <li>You will be logged out immediately across all devices.</li>
+      <li>During this 30-day window, sign-ins with that Google account will display an informative message indicating that account deletion is pending.</li>
+      <li>The administrator reviews and permanently removes your account, personal data, and game records from Firebase Authentication and Firestore within 30 days.</li>
+      <li>Once permanent deletion is completed, you may freely create a brand new account using the same Gmail address if you choose to return in the future.</li>
+    </ul>
+
+    <h2>2. How to Request Account Deletion</h2>
+
+    <div class="steps-card">
+      <span class="badge">Method 1: In-App (Recommended &amp; Instant)</span>
+      <p style="margin-bottom: 12px;">You can initiate deletion directly from within the MindSpark app:</p>
+      <ol>
+        <li>Open the <strong>MindSpark</strong> app on your Android device.</li>
+        <li>Tap the <strong>Settings</strong> icon (⚙️) from the top-right corner of the Home screen.</li>
+        <li>Scroll down to the bottom and select <strong>Delete Account &amp; Data</strong>.</li>
+        <li>Read the confirmation warning detailing data loss and the 30-day procedure.</li>
+        <li>Tap <strong>Agree &amp; Request Delete</strong> to confirm.</li>
+      </ol>
+      <p style="margin-top: 10px; font-size: 13px; color: #a78bfa;">
+        Your request will be recorded immediately in Firebase, and you will be safely logged out.
+      </p>
+    </div>
+
+    <div class="steps-card">
+      <span class="badge">Method 2: Web / Email Request</span>
+      <p style="margin-bottom: 12px;">If you have uninstalled the app or cannot access it:</p>
+      <ol>
+        <li>Send an email to <strong><a href="mailto:sajawal0005@gmail.com?subject=MindSpark%20Account%20Deletion%20Request">sajawal0005@gmail.com</a></strong> from the Gmail address associated with your MindSpark account.</li>
+        <li>Use the Subject line: <strong>MindSpark Account Deletion Request</strong>.</li>
+        <li>Include your Google account email and optional player username.</li>
+      </ol>
+      <p style="margin-top: 10px; font-size: 13px; color: #a78bfa;">
+        Our administrative team will process your request and schedule deletion within 30 days.
+      </p>
+      <a class="btn-email" href="mailto:sajawal0005@gmail.com?subject=MindSpark%20Account%20Deletion%20Request&body=Hello%20MindSpark%20Team%2C%0A%0APlease%20permanently%20delete%20my%20MindSpark%20account%20and%20all%20associated%20game%20data.%0A%0AAccount%20Email%3A%20">
+        ✉️ Send Deletion Request Email
+      </a>
+    </div>
+
+    <h2>3. Types of Data That Will Be Deleted</h2>
+    <p>Upon permanent deletion, the following data is permanently purged:</p>
+    <ul>
+      <li><strong>Authentication Profile:</strong> Firebase UID, Google display name, email address, profile avatar.</li>
+      <li><strong>Game Progress &amp; State:</strong> Total XP, IQ score, brain level, puzzle mastery levels, streaks.</li>
+      <li><strong>Economy &amp; Inventory:</strong> Spark coins, arena tokens, purchased avatars, frames, power-ups.</li>
+      <li><strong>Game Records:</strong> Daily challenge history, puzzle completion times, high scores, arena wins/losses.</li>
+      <li><strong>Leaderboard Entries:</strong> Arena leaderboard scores and global ranking entries.</li>
+    </ul>
+
+    <h2>4. Data Retention Period</h2>
+    <p>
+      Your deletion request is queued for up to <strong>30 calendar days</strong>. After this grace period, all data is permanently and irrevocably wiped from Google Cloud Firestore and Firebase Authentication. No backups of your personal data are retained.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>5. Contact Developer &amp; Administrator</h2>
+    <div class="contact-card">
+      <p>For any inquiries regarding data deletion or privacy practices:</p>
+      <p style="margin-top: 10px;">
+        👤 <strong>Developer:</strong> Sajawal<br/>
+        📧 <strong>Email:</strong> <a href="mailto:sajawal0005@gmail.com">sajawal0005@gmail.com</a><br/>
+        📱 <strong>Application:</strong> MindSpark: Daily Brain Challenge<br/>
+        📦 <strong>Package:</strong> com.gujjar.mindspark<br/>
+        🌐 <strong>Privacy Policy:</strong> <a href="privacy-policy.html">View Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

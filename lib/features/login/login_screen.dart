@@ -34,17 +34,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
       vsync: this,
       duration: const Duration(milliseconds: 900),
     );
-    _fadeAnim = CurvedAnimation(
-      parent: _animController,
-      curve: Curves.easeOut,
-    );
+    _fadeAnim = CurvedAnimation(parent: _animController, curve: Curves.easeOut);
     _slideAnim = Tween<Offset>(
       begin: const Offset(0, 0.12),
       end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _animController,
-      curve: Curves.easeOut,
-    ));
+    ).animate(CurvedAnimation(parent: _animController, curve: Curves.easeOut));
     _animController.forward();
   }
 
@@ -70,36 +64,51 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
       setState(() => _isGoogleLoading = false);
       showDialog(
         context: context,
-        builder: (ctx) => AlertDialog(
-          backgroundColor: const Color(0xFF1E1B2E),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          title: const Row(
-            children: [
-              Icon(Icons.hourglass_top_rounded, color: Colors.amberAccent, size: 28),
-              SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  'Account Deletion Pending',
-                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+        builder:
+            (ctx) => AlertDialog(
+              backgroundColor: const Color(0xFF1E1B2E),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              title: const Row(
+                children: [
+                  Icon(
+                    Icons.hourglass_top_rounded,
+                    color: Colors.amberAccent,
+                    size: 28,
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      'Account Deletion Pending',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              content: const Text(
+                'You have requested the deletion of this Google account.\n\nAs per the 30-day deletion procedure, the admin will permanently delete this account after the 30-day period. Until then, you cannot log in using this Gmail account.\n\nYou can log in with another Gmail account or continue playing as a Guest.\n\nOnce the account has been permanently deleted, you can create a new account using this Gmail address.',
+                style: TextStyle(
+                  color: Colors.white70,
+                  height: 1.5,
+                  fontSize: 14,
                 ),
               ),
-            ],
-          ),
-          content: const Text(
-            'Aapne is Google account ko delete karne ki request ki hui hai.\n\n30 days ke procedure ke mutabiq admin is account ko permanently delete kar dega. Tab tak aap is Gmail account se login nahi kar sakte.\n\nAap kisi doosri Gmail se login kar sakte hain ya as a Guest khel sakte hain.\n\nJab account permanently delete ho jayega, uske baad aap is Gmail se naya account bana sakte hain.',
-            style: TextStyle(color: Colors.white70, height: 1.5, fontSize: 14),
-          ),
-          actions: [
-            ElevatedButton(
-              onPressed: () => Navigator.pop(ctx),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                foregroundColor: Colors.white,
-              ),
-              child: const Text('OK'),
+              actions: [
+                ElevatedButton(
+                  onPressed: () => Navigator.pop(ctx),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: Colors.white,
+                  ),
+                  child: const Text('OK'),
+                ),
+              ],
             ),
-          ],
-        ),
       );
       return;
     }
@@ -123,7 +132,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
     if (!_termsAccepted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Please accept the Terms of Service & Privacy Policy to continue.'),
+          content: Text(
+            'Please accept the Terms of Service & Privacy Policy to continue.',
+          ),
           backgroundColor: Color(0xFF3D2B5E),
         ),
       );
@@ -136,7 +147,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
       setState(() => _isGuestLoading = false);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Guest sign in failed. Please check internet connection and try again.'),
+          content: Text(
+            'Guest sign in failed. Please check internet connection and try again.',
+          ),
           backgroundColor: Color(0xFF3D2B5E),
         ),
       );
@@ -168,46 +181,45 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
                       AppAssets.splashLogo,
                       width: 130,
                       height: 130,
-                      errorBuilder: (_, __, ___) => const Icon(
-                        Icons.psychology,
-                        size: 100,
-                        color: AppColors.primaryLight,
-                      ),
+                      errorBuilder:
+                          (_, __, ___) => const Icon(
+                            Icons.psychology,
+                            size: 100,
+                            color: AppColors.primaryLight,
+                          ),
                     ),
                     const SizedBox(height: 20),
                     // App name
                     Text(
                       AppStrings.appName,
-                      style:
-                          Theme.of(context).textTheme.displayLarge?.copyWith(
-                                fontSize: 36,
-                                letterSpacing: 1.5,
-                              ),
+                      style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                        fontSize: 36,
+                        letterSpacing: 1.5,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       AppStrings.tagline,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: AppColors.textSecondary,
-                          ),
+                        color: AppColors.textSecondary,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     const Spacer(flex: 3),
                     // Heading
                     Text(
                       'Welcome to Mind Spark',
-                      style:
-                          Theme.of(context).textTheme.displayMedium?.copyWith(
-                                fontSize: 26,
-                              ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.displayMedium?.copyWith(fontSize: 26),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       'Sign in to save your progress\nor play as guest instantly',
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: AppColors.textSecondary,
-                            height: 1.5,
-                          ),
+                        color: AppColors.textSecondary,
+                        height: 1.5,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 24),
@@ -312,7 +324,9 @@ class _TermsCheckbox extends StatelessWidget {
             activeColor: AppColors.primary,
             checkColor: Colors.white,
             side: const BorderSide(color: AppColors.primaryLight, width: 1.5),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4),
+            ),
           ),
         ),
         const SizedBox(width: 12),
@@ -388,27 +402,28 @@ class _GoogleSignInButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
             ),
           ),
-          child: isLoading
-              ? const SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: MindSparkLoadingIndicator(size: 30),
-                )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _GoogleLogo(),
-                    const SizedBox(width: 12),
-                    const Text(
-                      'Continue with Google',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF1F1F1F),
+          child:
+              isLoading
+                  ? const SizedBox(
+                    width: 30,
+                    height: 30,
+                    child: MindSparkLoadingIndicator(size: 30),
+                  )
+                  : Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _GoogleLogo(),
+                      const SizedBox(width: 12),
+                      const Text(
+                        'Continue with Google',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF1F1F1F),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
         ),
       ),
     );
@@ -450,32 +465,33 @@ class _GuestSignInButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
             ),
           ),
-          child: isLoading
-              ? const SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: MindSparkLoadingIndicator(size: 30),
-                )
-              : const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.person_outline_rounded,
-                      size: 22,
-                      color: AppColors.primaryLight,
-                    ),
-                    SizedBox(width: 12),
-                    Text(
-                      'Play as Guest',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                        letterSpacing: 0.3,
+          child:
+              isLoading
+                  ? const SizedBox(
+                    width: 30,
+                    height: 30,
+                    child: MindSparkLoadingIndicator(size: 30),
+                  )
+                  : const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.person_outline_rounded,
+                        size: 22,
+                        color: AppColors.primaryLight,
                       ),
-                    ),
-                  ],
-                ),
+                      SizedBox(width: 12),
+                      Text(
+                        'Play as Guest',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                          letterSpacing: 0.3,
+                        ),
+                      ),
+                    ],
+                  ),
         ),
       ),
     );
@@ -488,9 +504,7 @@ class _GoogleLogo extends StatelessWidget {
     return SizedBox(
       width: 22,
       height: 22,
-      child: CustomPaint(
-        painter: _GoogleLogoPainter(),
-      ),
+      child: CustomPaint(painter: _GoogleLogoPainter()),
     );
   }
 }
@@ -502,29 +516,33 @@ class _GoogleLogoPainter extends CustomPainter {
     final double cy = size.height / 2;
     final double r = size.width / 2;
 
-    final bluePaint = Paint()
-      ..color = const Color(0xFF4285F4)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = r * 0.35
-      ..strokeCap = StrokeCap.butt;
+    final bluePaint =
+        Paint()
+          ..color = const Color(0xFF4285F4)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = r * 0.35
+          ..strokeCap = StrokeCap.butt;
 
-    final redPaint = Paint()
-      ..color = const Color(0xFFEA4335)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = r * 0.35
-      ..strokeCap = StrokeCap.butt;
+    final redPaint =
+        Paint()
+          ..color = const Color(0xFFEA4335)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = r * 0.35
+          ..strokeCap = StrokeCap.butt;
 
-    final yellowPaint = Paint()
-      ..color = const Color(0xFFFBBC05)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = r * 0.35
-      ..strokeCap = StrokeCap.butt;
+    final yellowPaint =
+        Paint()
+          ..color = const Color(0xFFFBBC05)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = r * 0.35
+          ..strokeCap = StrokeCap.butt;
 
-    final greenPaint = Paint()
-      ..color = const Color(0xFF34A853)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = r * 0.35
-      ..strokeCap = StrokeCap.butt;
+    final greenPaint =
+        Paint()
+          ..color = const Color(0xFF34A853)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = r * 0.35
+          ..strokeCap = StrokeCap.butt;
 
     final arcR = r * 0.65;
     final rect = Rect.fromCircle(center: Offset(cx, cy), radius: arcR);
@@ -534,10 +552,11 @@ class _GoogleLogoPainter extends CustomPainter {
     canvas.drawArc(rect, 2.4, 1.6, false, greenPaint);
     canvas.drawArc(rect, 4.0, 1.0, false, redPaint);
 
-    final barPaint = Paint()
-      ..color = Colors.white
-      ..strokeWidth = r * 0.35
-      ..strokeCap = StrokeCap.butt;
+    final barPaint =
+        Paint()
+          ..color = Colors.white
+          ..strokeWidth = r * 0.35
+          ..strokeCap = StrokeCap.butt;
 
     canvas.drawLine(Offset(cx, cy), Offset(cx + arcR, cy), barPaint);
   }
