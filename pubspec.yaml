@@ -1,7 +1,7 @@
 name: mindspark
 description: MindSpark — Daily Brain Challenge
 publish_to: 'none'
-version: 1.0.0+3
+version: 1.0.1+4
 
 environment:
   sdk: ^3.7.2
