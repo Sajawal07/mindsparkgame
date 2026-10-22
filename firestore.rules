@@ -1,0 +1,55 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Function to check if user is accessing their own document
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    match /users/{uid} {
+      // Allow read if it's the owner
+      allow read: if isOwner(uid);
+      
+      // Allow create if it's the owner and payload contains basic structures
+      allow create: if isOwner(uid);
+      
+      // Allow update with anti-cheat checks on coins and XP
+      allow update: if isOwner(uid)
+                    && (!request.resource.data.keys().hasAll(['player']) ||
+                        (request.resource.data.player.coins < 500000 &&
+                         request.resource.data.player.xp < 5000000));
+                         
+      // Allow delete for account deletion requirement
+      allow delete: if isOwner(uid);
+      
+      match /daily_sessions/{sessionDate} {
+        allow read, write, delete: if isOwner(uid);
+      }
+    }
+    
+    match /arena_leaderboard/{uid} {
+      // Anyone logged in can read the leaderboard
+      allow read: if isAuthenticated();
+      // Each player can only write their own entry
+      allow write: if isOwner(uid)
+                   && request.resource.data.ap < 999999
+                   && request.resource.data.wins < 99999;
+    }
+
+    match /deletion_requests/{reqId} {
+      // Authenticated users can read their own deletion request by email or uid
+      allow read: if isAuthenticated();
+      // Authenticated users can create their deletion request
+      allow create: if isAuthenticated() && request.resource.data.uid == request.auth.uid;
+      // Updates/deletions reserved for admin in Firebase Console
+      allow update, delete: if false;
+    }
+  }
+}

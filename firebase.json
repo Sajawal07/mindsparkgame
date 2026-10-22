@@ -1,0 +1,40 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "mindspark-dev-backend-2026",
+          "appId": "1:119149082269:android:0774d17ee7e249c2550674",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "mindspark-dev-backend-2026",
+          "configurations": {
+            "android": "1:119149082269:android:0774d17ee7e249c2550674",
+            "ios": "1:119149082269:ios:7a1b44ac10d88f2b550674",
+            "web": "1:119149082269:web:b3e8dcf146dcfb17550674"
+          }
+        }
+      }
+    }
+  }
+}

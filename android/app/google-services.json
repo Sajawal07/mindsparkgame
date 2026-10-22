@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "119149082269",
+    "firebase_url": "https://mindspark-dev-backend-2026-default-rtdb.firebaseio.com",
+    "project_id": "mindspark-dev-backend-2026",
+    "storage_bucket": "mindspark-dev-backend-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119149082269:android:0774d17ee7e249c2550674",
+        "android_client_info": {
+          "package_name": "com.gujjar.mindspark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119149082269-5kpu3mmr3rvn2a8k1rpuiah6sehkppnf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gujjar.mindspark",
+            "certificate_hash": "cdbb071c91cfd6124a6e4b2e01a0ea77ed92f1dd"
+          }
+        },
+        {
+          "client_id": "119149082269-unfesb5uhtm7dletcrb14m5g7k9c0bof.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gujjar.mindspark",
+            "certificate_hash": "2fa85bd3ee38fd9585e78bcb7bcb9d330aec4602"
+          }
+        },
+        {
+          "client_id": "119149082269-6rakl7lhooe88f7a8221in3f3ienk4jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXoJbhoTFut_QtBTzXRwww2w09oV3bAoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119149082269-6rakl7lhooe88f7a8221in3f3ienk4jl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "119149082269-6v2v6v9vgf5f8ugk8l1m59vnr40n6f08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mindspark"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119149082269:android:5f754c1c1143453a550674",
+        "android_client_info": {
+          "package_name": "com.mindspark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119149082269-chli6t5v5ghml9hq7g1gu6e7d6cc1r0n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mindspark",
+            "certificate_hash": "2fa85bd3ee38fd9585e78bcb7bcb9d330aec4602"
+          }
+        },
+        {
+          "client_id": "119149082269-6rakl7lhooe88f7a8221in3f3ienk4jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXoJbhoTFut_QtBTzXRwww2w09oV3bAoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119149082269-6rakl7lhooe88f7a8221in3f3ienk4jl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "119149082269-6v2v6v9vgf5f8ugk8l1m59vnr40n6f08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mindspark"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

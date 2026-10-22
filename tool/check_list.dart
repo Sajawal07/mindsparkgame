@@ -1,0 +1,38 @@
+import 'dart:io';
+
+bool oneApart(String a, String b) {
+  if (a.length != b.length) return false;
+  var d = 0;
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] != b[i]) d++;
+    if (d > 1) return false;
+  }
+  return d == 1;
+}
+
+void check(String name, List<String> p) {
+  for (var i = 0; i < p.length - 1; i++) {
+    if (!oneApart(p[i], p[i + 1])) {
+      stderr.writeln('FAIL $name at $i: ${p[i]} -> ${p[i + 1]}');
+      exit(1);
+    }
+  }
+  stdout.writeln('OK $name (${p.length}) ${p.first}->${p.last}');
+}
+
+void main() {
+  check('h1', 'SLEEP,SHEEP,SHEER,CHEER,CHEEK,CREEK,CREED,BREED,BLEED,BLEND,BLOND,BLAND,BLANK,FLANK,FRANK,CRANK,CRACK,TRACK,TRACE,BRACE'.split(','));
+  check('h2', 'BLACK,SLACK,STACK,STICK,STINK,SLINK,BLINK,BLIND,BLOND,BLAND,BLIND,BLINK,BLANK,FLANK,FRANK,CRANK,CRACK,TRACK,TRACE,BRACE'.split(','));
+  check('h3', 'FLAME,FLAKE,FLARE,GLARE,BLARE,BLAME,BLADE,GLADE,GLIDE,GUIDE,GLIDE,SLIDE,SLIME,SLICE,SPICE,SPINE,SHINE,WHINE,WHITE,WHILE'.split(','));
+  check('h4', 'STONE,STORE,SNORE,SNARE,SPARE,SPACE,SPICE,SLICE,SLIME,SLIDE,SLICE,SPICE,SPIRE,SPARE,SPARK,STARK,STACK,STICK,STINK,STING'.split(','));
+  check('h5', 'BREAD,TREAD,TREED,BREED,CREED,CREEK,CHEEK,CHEER,SHEER,SHEEP,SHEER,CHEER,CHEEK,CREEK,CREED,TREED,TREND,TREAD,BREAD,BREAK'.split(','));
+  check('h6', 'BEACH,PEACH,PEACE,PLACE,PLATE,SLATE,STATE,STALE,STOLE,STOKE,SPOKE,SPIKE,SPICE,SLICE,SLIDE,GLIDE,GLADE,GRADE,GRACE,BRACE'.split(','));
+  check('h7', 'CRACK,TRACK,TRICK,TRUCK,TRUNK,DRUNK,DRINK,DRANK,CRANK,CRANE,CRANK,FRANK,DRANK,DRINK,DRUNK,TRUNK,TRUCK,TRACK,TRACE,BRACE'.split(','));
+  check('h8', 'STONE,STORE,SNORE,SNARE,SPARE,SPACE,SPICE,SLICE,SLIDE,SLIME,SLICE,SLIDE,GLIDE,GLADE,GRADE,GRAVE,GRAPE,GRACE,TRACE,BRACE'.split(','));
+  check('m_alt1', 'BEACH,PEACH,PEACE,PLACE,PLATE,SLATE,STATE,STAKE,SHAKE,SHARE,SHORE,CHORE,CHORD'.split(','));
+  check('m_alt2', 'BEACH,PEACH,PEACE,PLACE,PLANE,PLATE,SLATE,SKATE,STATE,STAGE,STAKE,STALE,SCALE'.split(','));
+  check('m_alt3', 'BEACH,PEACH,PEACE,PLACE,PLANE,PLATE,SLATE,SKATE,STATE,STALE,SCALE,SCARE'.split(','));
+  check('m7_light', 'LIGHT,TIGHT,EIGHT,FIGHT,SIGHT,MIGHT,SIGHT,RIGHT,FIGHT,EIGHT,TIGHT,NIGHT'.split(','));
+  check('m7_batch', 'BATCH,WATCH,MATCH,MARCH,MATCH,WATCH,WITCH,PITCH,PATCH,BATCH,WATCH,MATCH'.split(','));
+  check('m_bidir_flame', 'FLAME,FLARE,GLARE,GLADE,GLIDE,SLIDE,SLICE,SPICE,SPINE,SHINE,WHINE,WHILE'.split(','));
+}
